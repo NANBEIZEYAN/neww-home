@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 这里改成了你想要的标签页名字 -->
     <title>NO-个人信息</title>
     <style>
         * {
@@ -43,25 +42,15 @@
             position: relative;
         }
 
+        /* NO字体修改：纯白、加粗、位置调整 */
         .name-text {
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             right: 35%; 
             font-size: 80px;
             font-weight: 900;
+            color: #ffffff; /* 纯白色 */
             letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.2); 
-            -webkit-text-stroke: 2px #ffffff; 
-            display: flex;
-            align-items: baseline;
-        }
-
-        .name-text span {
-            font-size: 24px;
-            font-weight: normal;
-            letter-spacing: 0;
-            margin-left: 10px;
-            -webkit-text-stroke: 1px #ffffff;
         }
 
         .avatar {
@@ -83,10 +72,12 @@
             padding: 10px 20px;
         }
 
+        /* 替换为你想要的文案，靠右 */
         .quote {
             text-align: right;
-            font-size: 16px;
+            font-size: 18px;
             color: #000;
+            font-weight: bold; /* 加粗一点让它显眼 */
             margin-bottom: 20px;
             margin-right: 150px; 
         }
@@ -150,10 +141,9 @@
 
         @media (max-width: 600px) {
             .bg-image { height: 250px; }
-            .name-text { font-size: 50px; right: 25%; bottom: 0; }
-            .name-text span { font-size: 16px; }
+            .name-text { font-size: 50px; right: 25%; bottom: 5px; }
             .avatar { width: 100px; height: 100px; bottom: -40px; right: 5%; }
-            .quote { margin-right: 90px; font-size: 14px; }
+            .quote { margin-right: 90px; font-size: 16px; }
             .tags span { font-size: 14px; padding: 3px 10px; }
         }
     </style>
@@ -163,13 +153,15 @@
     <div class="container">
         <div class="hero-section">
             <div class="bg-image">
-                <div class="name-text">No <span>(Name)</span></div>
+                <!-- 删除了 (Name)，只保留 NO -->
+                <div class="name-text">NO</div>
             </div>
             <div class="avatar"></div>
         </div>
 
         <div class="content-section">
-            <p class="quote">人没有两颗心脏 所以爱恨同源 悲欢共振</p >
+            <!-- 改成了新的文案 -->
+            <p class="quote">我們好久不見</p >
             
             <p class="info">女 ISTP le 23</p >
             
