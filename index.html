@@ -26,14 +26,45 @@
             flex-direction: column;
         }
 
+        /* ================= 新增：顶部导航栏 ================= */
+        .nav-bar {
+            display: flex;
+            gap: 10px; /* 方框之间的间距 */
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* 手机端自动换行 */
+        }
+
+        .nav-bar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px; /* 方框圆角 */
+            transition: all 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        .nav-bar a:hover {
+            background-color: #eee;
+            border-color: #000;
+            color: #000;
+        }
+
+        /* 当前所在页面的高亮样式 */
+        .nav-bar a.active {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+        /* =================================================== */
+
         .hero-section {
             position: relative;
             width: 100%;
-            margin-bottom: 40px; /* 给下方的头像留出空间 */
-            margin-top: 10px;
+            margin-bottom: 40px; 
         }
 
-        /* 背景图上现在什么都没有了，只有图 */
         .bg-image {
             width: 100%;
             height: 380px; 
@@ -43,7 +74,6 @@
             position: relative;
         }
 
-        /* 头像依然压在这个边缘 */
         .avatar {
             position: absolute;
             bottom: -60px; 
@@ -63,14 +93,12 @@
             padding: 10px 20px;
         }
 
-        /* 新建的文字块，靠右排版 */
         .text-block {
             text-align: right;
-            margin-right: 150px; /* 避开右侧的头像 */
+            margin-right: 150px; 
             margin-bottom: 30px;
         }
 
-        /* NO 放在最上面，黑色加粗 */
         .no-title {
             font-size: 50px;
             font-weight: 900;
@@ -79,7 +107,6 @@
             letter-spacing: 2px;
         }
 
-        /* 替换的文案放在 NO 下面 */
         .quote {
             font-size: 18px;
             color: #000;
@@ -156,16 +183,22 @@
 <body>
 
     <div class="container">
+        
+        <!-- 顶部导航栏 -->
+        <div class="nav-bar">
+            <a href=" " class="active">首页</a >
+            <a href="binglian.html">01 BINGLIAN</a >
+            <a href="pupei.html">02 PUPEI</a >
+            <a href="shudong.html">03 SHUDONG</a >
+        </div>
+
         <div class="hero-section">
-            <!-- 背景图 -->
             <div class="bg-image"></div>
-            <!-- 头像 -->
             <div class="avatar"></div>
         </div>
 
         <div class="content-section">
             
-            <!-- 新的文字排版区域：NO在上，文案在下 -->
             <div class="text-block">
                 <div class="no-title">NO</div>
                 <p class="quote">我們好久不見</p >
@@ -185,7 +218,7 @@
             <div class="divider"></div>
             
             <div class="btn-container">
-                <a href=" " class="next-btn">下一页</a >
+                <a href="binglian.html" class="next-btn">下一页</a >
             </div>
         </div>
     </div>
