@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 - 新家</title>
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 主卡片容器，模拟图2的圆角边框 */
+        .main-container {
+            width: 90%;
+            max-width: 900px;
+            height: 85vh;
+            border: 1px solid #e0e0e0;
+            border-radius: 30px;
+            padding: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 顶部图片区域（浅灰色背景 + 头像） */
+        .hero-section {
+            width: 100%;
+            height: 55%;
+            background-image: url('beijintu.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* 名字区域：镂空白色效果 */
+        .name-box {
+            position: absolute;
+            bottom: 20px;
+            right: 35%;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .no-text {
+            font-size: 100px;
+            font-weight: bold;
+            color: transparent; /* 文字透明 */
+            -webkit-text-stroke: 2px white; /* 白色描边实现镂空感 */
+            letter-spacing: 2px;
+            margin-right: 10px;
+        }
+
+        .name-text {
+            font-size: 24px;
+            color: transparent;
+            -webkit-text-stroke: 1px white;
+        }
+
+        /* 圆形头像 */
+        .avatar-circle {
+            position: absolute;
+            bottom: -50px;
+            right: 5%;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-image: url('xiaomao.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #808080; /* 如果图片没加载出来的备用色 */
+            border: 4px solid #ffffff; /* 加上白边让它更突出 */
+            z-index: 10;
+        }
+
+        /* 下半部分文本内容 */
+        .info-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-top: 50px; /* 给头像留出空间 */
+        }
+
+        .quote-text {
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        .personal-info {
+            font-size: 14px;
+            color: #666666; /* 深灰 */
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .tags-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 18px; /* 比正文大，比NO小 */
+            color: #000000;
+            border: 1px solid #000000;
+            padding: 4px 12px;
+            border-radius: 5px;
+        }
+
+        .signature-text {
+            font-size: 14px;
+            color: #999999; /* 浅灰 */
+            margin-bottom: 15px;
+        }
+
+        /* 分割线 */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        /* 底部按钮区域 */
+        .footer-action {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .next-btn {
+            text-decoration: none;
+            color: #000000;
+            font-size: 18px;
+            padding: 10px 30px;
+            border: 2px solid #000000;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .next-btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            .no-text { font-size: 60px; }
+            .name-text { font-size: 16px; }
+            .avatar-circle { width: 100px; height: 100px; bottom: -20px; }
+            .hero-section { height: 45%; }
+            .main-container { height: 90vh; padding: 20px; }
+            .name-box { right: 25%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- 顶部背景和头像 -->
+        <div class="hero-section">
+            <div class="name-box">
+                <span class="no-text">No</span>
+                <span class="name-text">(Name)</span>
+            </div>
+            <div class="avatar-circle"></div>
+        </div>
+
+        <!-- 底部信息与按钮 -->
+        <div class="info-section">
+            <p class="quote-text">人没有两颗心脏 所以爱恨同源 悲欢共振</p >
+            
+            <p class="personal-info">女 ISTP le 23</p >
+            
+            <div class="tags-container">
+                <span class="tag">#三无</span>
+                <span class="tag">#病恋</span>
+                <span class="tag">#普陪</span>
+                <span class="tag">#树洞</span>
+            </div>
+            
+            <p class="signature-text">我们不是片刻的恋人了</p >
+            
+            <div class="divider"></div>
+            
+            <div class="footer-action">
+                <!-- 这里的 href 对应下一页的文件名 -->
+                <a href=" " class="next-btn">下一页</a >
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
