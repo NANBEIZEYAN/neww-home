@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 PUPEI</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; }
+        body { background-color: #ffffff; display: flex; justify-content: center; padding: 20px; }
+        .container { width: 100%; max-width: 800px; display: flex; flex-direction: column; }
+
+        /* === 顶部导航栏 === */
+        .nav-bar { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .nav-bar a { text-decoration: none; color: #333; font-size: 14px; padding: 8px 16px; border: 1px solid #ccc; border-radius: 6px; transition: 0.3s; }
+        .nav-bar a:hover { background-color: #eee; border-color: #000; color: #000; }
+        .nav-bar a.active { background-color: #000; color: #fff; border-color: #000; }
+
+        /* === 第一行大字：靠右、大号、加粗 === */
+        .header-title { text-align: right; margin-bottom: 10px; font-size: 50px; font-weight: 900; letter-spacing: 2px; color: #000; }
+
+        /* === 第二行小字：灰色、小号、靠右 === */
+        .sub-title { text-align: right; font-size: 14px; color: #999; margin-bottom: 20px; letter-spacing: 1px; }
+
+        .divider { width: 100%; height: 1px; background-color: #ccc; margin: 20px 0; }
+        .thin-divider { width: 100%; height: 1px; background-color: #eee; margin: 10px 0; }
+
+        /* === 图片居中 === */
+        .image-center { text-align: center; margin: 20px 0; }
+        .image-center img { max-width: 100%; height: auto; border-radius: 8px; }
+
+        /* === 图片下方的“关于我”区域 === */
+        .about-me-title { font-size: 24px; font-weight: 900; color: #000; margin-bottom: 15px; text-transform: uppercase; }
+        .about-me-text p { font-size: 15px; color: #333; line-height: 2; margin-bottom: 5px; }
+
+        /* === 选项卡标签区域 === */
+        .tab-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
+        .tab-btn { background: #fff; border: 1px solid #ccc; padding: 6px 15px; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold; color: #333; transition: 0.3s; }
+        .tab-btn.active, .tab-btn:hover { background-color: #000; color: #fff; border-color: #000; }
+        .tab-hint { font-size: 12px; color: #999; margin-left: 10px; }
+
+        /* 选项卡内容区 */
+        .tab-content { display: none; padding: 20px; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
+        .tab-content.active { display: block; }
+
+        /* 标签内部文字排版（全部靠左） */
+        .content-left { text-align: left; font-size: 15px; color: #333; line-height: 1.8; }
+        .content-left p { margin-bottom: 8px; }
+        .price-sub { font-size: 12px; color: #888; margin-bottom: 10px !important; }
+        .price-title { font-size: 16px; font-weight: bold; margin-top: 15px; margin-bottom: 5px !important; }
+
+        /* === 底部按钮 === */
+        .bottom-nav { display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 20px; }
+        .bottom-nav a { text-decoration: none; color: #000; font-size: 16px; font-weight: bold; padding: 10px 40px; border: 1.5px solid #000; border-radius: 8px; transition: 0.3s; }
+        .bottom-nav a:hover { background-color: #000; color: #fff; }
+
+        /* 手机端适配 */
+        @media (max-width: 600px) {
+            .header-title { font-size: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- 顶部导航 -->
+        <div class="nav-bar">
+            <a href="index.html">首页</a>
+            <a href="binglian.html">01 BINGLIAN</a>
+            <a href="pupei.html" class="active">02 PUPEI</a>
+            <a href="shudong.html">03 SHUDONG</a>
+        </div>
+
+        <!-- 大字标题与灰色小字 -->
+        <div class="header-title">02 PUPEI</div>
+        <div class="sub-title">愿我们有一一个美好的回忆</div>
+
+        <div class="divider"></div>
+
+        <!-- 居中图片 -->
+        <div class="image-center">
+            <img src="huahua.png" alt="花花">
+        </div>
+
+        <!-- 关于我 -->
+        <div class="about-me-title">关于我</div>
+        <div class="about-me-text">
+            <p>1. 个人审美到位，可帮批光遇图</p>
+            <p>2. 不会出现冷场等一系列情况</p>
+            <p>3. 杂食光遇CP通吃，可以陪你换装扮玩呀</p>
+            <p>4. 极度好说话在此，可以满足的我会尽量满足！</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 选项卡标题与提示 -->
+        <div class="tab-header">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-style')">#风格</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-price')">#价格</button>
+            <span class="tab-hint">点击标签切换</span>
+        </div>
+
+        <!-- 风格内容 -->
+        <div id="tab-style" class="tab-content active">
+            <div class="content-left">
+                <p>风格-高共情 夸赞</p>
+                <p>我的聊天内容-打卡 宠物 装扮 情感 家庭 学校</p>
+                <p>暧昧普-偏日常 引导 下位小狗</p>
+            </div>
+        </div>
+
+        <!-- 价格内容 -->
+        <div id="tab-price" class="tab-content">
+            <div class="content-left">
+                <p class="price-title">普</p>
+                <p class="price-sub">一小时30R 半小时16R<br>12点以后+3R 4点以后+4R</p>
+                
+                <div class="thin-divider"></div>
+                
+                <p class="price-title">暧昧普</p>
+                <p class="price-sub">一小时32R 半小时17R<br>12点以后+3R 4点以后+4R</p>
+
+                <div class="thin-divider"></div>
+
+                <p>团价高跟团</p>
+            </div>
+        </div>
+
+        <!-- 底部跳转按钮 -->
+        <div class="bottom-nav">
+            <a href="binglian.html">上一页</a>
+            <a href="shudong.html">下一页</a>
+        </div>
+
+    </div>
+
+    <!-- 标签切换 JS -->
+    <script>
+        function switchTab(event, tabId) {
+            var buttons = document.querySelectorAll('.tab-btn');
+            var contents = document.querySelectorAll('.tab-content');
+
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
